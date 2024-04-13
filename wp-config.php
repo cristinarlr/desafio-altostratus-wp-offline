@@ -20,7 +20,7 @@
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'my-db-instance' );
+define( 'DB_NAME', 'my-database-instance' );
 
 /** Database username */
 define( 'DB_USER', 'root' );
@@ -29,7 +29,7 @@ define( 'DB_USER', 'root' );
 define( 'DB_PASSWORD', 'wp-password42' );
 
 /** Database hostname */
-define( 'DB_HOST', 'desafio-altostratus:us-central1:my-db-instance' );
+define( 'DB_HOST', '35.193.29.174' );
 
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
