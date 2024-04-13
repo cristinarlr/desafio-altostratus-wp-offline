@@ -26,7 +26,7 @@ define( 'DB_NAME', 'my-db-instance' );
 define( 'DB_USER', 'root' );
 
 /** Database password */
-define( 'DB_PASSWORD', 'password' );
+define( 'DB_PASSWORD', 'wp-password42' );
 
 /** Database hostname */
 define( 'DB_HOST', 'desafio-altostratus:us-central1:my-db-instance' );
