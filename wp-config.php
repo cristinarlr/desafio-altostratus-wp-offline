@@ -31,22 +31,12 @@ if (
 }
 
 // ** MySQL settings - You can get this info from your web host ** //
-/** MySQL hostname */
-define( 'DB_HOST', getenv('DB_HOST') );
-
-/** MySQL database username */
-define( 'DB_USER', getenv('DB_USER') );
-
-/** MySQL database password */
-define( 'DB_PASSWORD', getenv('DB_PASSWORD') );
-
-/** The name of the database for WordPress */
-define( 'DB_NAME', getenv('DB_NAME')  );
-
-/** Database Charset to use in creating database tables. */
+/** Los ajustes de la base de datos de WordPress */
+define( 'DB_NAME', 'my-database' );
+define( 'DB_USER', 'crramire' );
+define( 'DB_PASSWORD', 'changeme' );
+define( 'DB_HOST', '35.226.58.170' );
 define( 'DB_CHARSET', 'utf8' );
-
-/** The Database Collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
 
 
