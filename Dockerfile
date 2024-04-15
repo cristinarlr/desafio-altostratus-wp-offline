@@ -9,3 +9,6 @@ ENV WORDPRESS_DB_NAME "my-database"
 ENV WORDPRESS_DB_USER "crramire"
 ENV WORDPRESS_DB_NAME "changeme"
 ENV WORDPRESS_DB_NAME "35.193.241.135"
+
+# Copiar el archivo de configuración personalizado de WordPress
+COPY wp-config.php /var/www/html/wp-config.php

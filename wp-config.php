@@ -19,23 +19,20 @@
  */
 
 // ** Database settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
+
+/** Los ajustes de la base de datos de WordPress */
 define( 'DB_NAME', 'my-database' );
-
-/** Database username */
 define( 'DB_USER', 'crramire' );
-
-/** Database password */
 define( 'DB_PASSWORD', 'changeme' );
-
-/** Database hostname */
-define( 'DB_HOST', '35.193.241.135' );
-
-/** Database charset to use in creating database tables. */
+define( 'DB_HOST', 'localhost' );
 define( 'DB_CHARSET', 'utf8' );
-
-/** The database collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
+
+/** Prefijo de la tabla de la base de datos de WordPress */
+$table_prefix = 'wp_';
+
+/** Para los desarrolladores: Modo de depuración de WordPress. */
+define( 'WP_DEBUG', false );
 
 /**#@+
  * Authentication unique keys and salts.
