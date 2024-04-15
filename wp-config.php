@@ -2,46 +2,62 @@
 /**
  * The base configuration for WordPress
  *
- * The wp-config.php creation script uses this file during the installation.
- * You don't have to use the website, you can copy this file to "wp-config.php"
- * and fill in the values.
+ * The wp-config.php creation script uses this file during the
+ * installation. You don't have to use the web site, you can
+ * copy this file to "wp-config.php" and fill in the values.
  *
  * This file contains the following configurations:
  *
- * * Database settings
+ * * MySQL settings
  * * Secret keys
  * * Database table prefix
  * * ABSPATH
  *
- * @link https://wordpress.org/documentation/article/editing-wp-config-php/
+ * @link https://codex.wordpress.org/Editing_wp-config.php
  *
  * @package WordPress
  */
 
-// ** Database settings - You can get this info from your web host ** //
+//https://codex.wordpress.org/Administration_Over_SSL#Using_a_Reverse_Proxy
+// in some setups HTTP_X_FORWARDED_PROTO might contain
+// a comma-separated list e.g. http,https
+// so check for https existence
+if (
+	isset($_SERVER['HTTP_X_FORWARDED_PROTO']) &&
+	strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false
+) {
+	define('FORCE_SSL_ADMIN', true);
+	$_SERVER['HTTPS'] = 'on';
+}
 
-/** Los ajustes de la base de datos de WordPress */
-define( 'DB_NAME', 'my-database' );
-define( 'DB_USER', 'crramire' );
-define( 'DB_PASSWORD', 'changeme' );
-define( 'DB_HOST', '35.193.241.135' );
+// ** MySQL settings - You can get this info from your web host ** //
+/** MySQL hostname */
+define( 'DB_HOST', getenv('DB_HOST') );
+
+/** MySQL database username */
+define( 'DB_USER', getenv('DB_USER') );
+
+/** MySQL database password */
+define( 'DB_PASSWORD', getenv('DB_PASSWORD') );
+
+/** The name of the database for WordPress */
+define( 'DB_NAME', getenv('DB_NAME')  );
+
+/** Database Charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
+
+/** The Database Collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
 
-/** Prefijo de la tabla de la base de datos de WordPress */
-$table_prefix = 'wp_';
 
-/** Para los desarrolladores: Modo de depuración de WordPress. */
-define( 'WP_DEBUG', false );
+
 
 /**#@+
- * Authentication unique keys and salts.
+ * Authentication Unique Keys and Salts.
  *
- * Change these to different unique phrases! You can generate these using
- * the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}.
- *
- * You can change these at any point in time to invalidate all existing cookies.
- * This will force all users to have to log in again.
+ * Change these to different unique phrases!
+ * You can generate these using the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}
+ * You can change these at any point in time to invalidate all existing cookies. This will force all users to have to log in again.
  *
  * @since 2.6.0
  */
@@ -57,7 +73,7 @@ define( 'NONCE_SALT',       'put your unique phrase here' );
 /**#@-*/
 
 /**
- * WordPress database table prefix.
+ * WordPress Database Table prefix.
  *
  * You can have multiple installations in one database if you give each
  * a unique prefix. Only numbers, letters, and underscores please!
@@ -72,22 +88,18 @@ $table_prefix = 'wp_';
  * in their development environments.
  *
  * For information on other constants that can be used for debugging,
- * visit the documentation.
+ * visit the Codex.
  *
- * @link https://wordpress.org/documentation/article/debugging-in-wordpress/
+ * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
 define( 'WP_DEBUG', false );
-
-/* Add any custom values between this line and the "stop editing" line. */
-
-
 
 /* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */
 if ( ! defined( 'ABSPATH' ) ) {
-	define( 'ABSPATH', __DIR__ . '/' );
+	define( 'ABSPATH', dirname( __FILE__ ) . '/' );
 }
 
 /** Sets up WordPress vars and included files. */
-require_once ABSPATH . 'wp-settings.php';
+require_once( ABSPATH . 'wp-settings.php' );
