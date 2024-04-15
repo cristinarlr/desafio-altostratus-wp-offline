@@ -24,7 +24,7 @@
 define( 'DB_NAME', 'my-database' );
 define( 'DB_USER', 'crramire' );
 define( 'DB_PASSWORD', 'changeme' );
-define( 'DB_HOST', 'localhost' );
+define( 'DB_HOST', '35.193.241.135' );
 define( 'DB_CHARSET', 'utf8' );
 define( 'DB_COLLATE', '' );
 
