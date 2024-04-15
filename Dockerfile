@@ -40,6 +40,6 @@ RUN chmod +x /usr/local/bin/docker-entrypoint.sh;
 # COPY wordpress config file
 COPY  wp-config.php  /usr/src/wordpress/
 
-ENTRYPOINT ["docker-entrypoint.sh"]
+#ENTRYPOINT ["docker-entrypoint.sh"]
 
 CMD ["apache2-foreground"]
