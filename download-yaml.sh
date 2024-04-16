@@ -3,6 +3,6 @@ gcloud run services describe wp-run-h3 \
   --region=us-central1 \
   --project=desafio-altostratus \
   --format=yaml \
-  > config.yaml
+  > service.yaml
 
 

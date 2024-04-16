@@ -1,7 +1,16 @@
-PROJECT_ID=desafio-altostratus
+#!/bin/bash
 
-gcloud builds \
-  -t gcr.io/desafio-altostratus/desafio-altostratus-wp-offline . 
+PROJECT_ID="desafio-altostratus"
 
-gcloud builds submit \ 
-  --tag gcr.io/desafio-altostratus/desafio-altostratus-wp-offline
+# Construir y enviar la imagen del contenedor a Container Registry
+gcloud builds submit \
+	  --tag gcr.io/$PROJECT_ID/desafio-altostratus-wp-offline \
+	    .
+
+# Registrar la imagen en Artifact Registry
+gcloud artifacts docker import \
+	  gcr.io/$PROJECT_ID/desafio-altostratus-wp-offline \
+	    --location=us \
+	      --repository=desafio-altostratus-wp-offline
+
+
