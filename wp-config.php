@@ -35,8 +35,8 @@ if (
 define( 'DB_NAME', 'my-database' );
 define( 'DB_USER', 'crramire' );
 define( 'DB_PASSWORD', 'changeme' );
-#define( 'DB_HOST', '35.226.58.170' );
-define( 'DB_HOST', 'desafio-altostratus:us-central1:my-database-instance' );
+define( 'DB_HOST', '35.226.58.170' );
+#define( 'DB_HOST', 'desafio-altostratus:us-central1:my-database-instance' );
 define( 'DB_CHARSET', 'utf8' );
 define( 'DB_COLLATE', '' );
 
